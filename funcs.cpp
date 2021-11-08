@@ -27,9 +27,10 @@ Coord3D * fartherFromOrigin(Coord3D *p1, Coord3D *p2) {
 
 //task C 
 void move(Coord3D *ppos, Coord3D *pvel, double dt) { 
-    ppos->x =  x + (pvel->x) * dt; 
-    ppos->y =  y + (pvel->) * dt; 
-    ppos->z =  z + (pvel->z) * dt; 
+    ppos->x =  ppos->x + (pvel->x) * dt; 
+    ppos->y =  ppos->y + (pvel->y) * dt; 
+    ppos->z =  ppos->z + (pvel->z) * dt; 
+    
 
 } 
 
