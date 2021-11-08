@@ -7,5 +7,5 @@
 
 TEST_CASE("task A"){
     Coord3D point = {9, 10, 11};
-    CHECK(length(point) == 17.378147196982766); 
+    CHECK(length(&point) == 17.378147196982766); 
 }
