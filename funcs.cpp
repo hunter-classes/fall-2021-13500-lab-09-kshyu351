@@ -26,7 +26,7 @@ Coord3D * fartherFromOrigin(Coord3D *p1, Coord3D *p2) {
 }
 
 //task C 
-void move(Coord3D *ppos, Coord3D *pvel, double dt) { 
+void move(Coord3D *ppos, Coord3D *pvel, double dt) {   //3,4,5 //6,7,8 /21, 25, 29
 
     ppos->x =  ppos->x + pvel->x * dt; 
     ppos->y =  ppos->y + pvel->y * dt; 
@@ -36,9 +36,10 @@ void move(Coord3D *ppos, Coord3D *pvel, double dt) {
 //task E 
 
 Coord3D* createCoord3D(double x, double y, double z) { 
-    Coord3D point = {x,y,z};
-    Coord3D* pointer = new Coord3D;
-    pointer = &point;
+   
+   // Coord3D* pointer = new Coord3D;
+    Coord3D* pointer = new Coord3D{x,y,z};
+    
     return pointer;
 
 }
@@ -46,7 +47,7 @@ Coord3D* createCoord3D(double x, double y, double z) {
 
 void deleteCoord3D(Coord3D *p) { 
     delete p;
-
+    p = nullptr;
 }
 
 

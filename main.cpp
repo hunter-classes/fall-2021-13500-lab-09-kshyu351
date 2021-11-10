@@ -35,18 +35,20 @@ int main() {
     std::cout << "Enter position: ";
     std::cin >> x >> y >> z;
     Coord3D *ppos = createCoord3D(x,y,z);
+    //std::cout << (*ppos).x << " " << (*ppos).y << " " << (*ppos).z << std::endl;
     
     std::cout << "Enter velocity: ";
     std::cin >> x >> y >> z;
     Coord3D *pvel = createCoord3D(x,y,z);
+   // std::cout << (*pvel).x << " " << (*pvel).y << " " << (*pvel).z << std::endl;
 
     move(ppos, pvel, 10.0);
 
     std::cout << "Coordinates after 10 seconds: " 
          << (*ppos).x << " " << (*ppos).y << " " << (*ppos).z << std::endl;
 
-    // deleteCoord3D(ppos); // release memory
-    // deleteCoord3D(pvel);
+    deleteCoord3D(ppos); // release memory
+    deleteCoord3D(pvel);
 
 
 }

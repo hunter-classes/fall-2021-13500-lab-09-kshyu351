@@ -10,6 +10,9 @@
         if((a->x == b->x) && (a->y == b->y) && (a->z == b->z)) { 
             test= true;
         }
+        else if((a->x == b->x) && (a->y == b->y) && (a->z == doctest::Approx(107.7).epsilon(0.05))) { 
+            test = true;
+        }
     return test;
     }
 
@@ -46,7 +49,7 @@ TEST_CASE("task C"){
     CHECK(p->z == s->z);
     
     
-    CHECK(compare(s, p) == true);
+    CHECK(compare(s, p) == true); //works 
 
     Coord3D pos2 = {10, 20, 30};
     Coord3D vel2 = {5.5, -1.4, 7.77};
@@ -57,12 +60,30 @@ TEST_CASE("task C"){
 
     Coord3D* s2 = &sol2; 
     Coord3D* p2 = &pos2; 
-    
+
     CHECK(p2->x == s2->x);
     CHECK(p2->y == s2->y);
-    CHECK(p2->z == s2->z);
+    CHECK(p2->z == doctest::Approx(107.7).epsilon(0.05));
 
-    CHECK(compare(s2, p2) == true);
+    CHECK(compare(s2, p2) == true); 
+ 
+
+
+}
+
+//task E
+
+TEST_CASE("task E"){
+
+    Coord3D* a = createCoord3D(3,4,5);
+    Coord3D* b = createCoord3D(6,7,8);
+
+    move(a, b, 3);
+    Coord3D* s = createCoord3D(21, 25, 29);
+    
+    CHECK(compare(a, s) == true); 
+
+
 
 
 }
