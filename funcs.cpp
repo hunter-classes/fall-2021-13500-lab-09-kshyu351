@@ -46,10 +46,8 @@ Coord3D* createCoord3D(double x, double y, double z) {
 
 
 void deleteCoord3D(Coord3D *p) { 
-    
-    p = nullptr;
-    delete p;
-    
+
+    delete p;   
 }
 
 
