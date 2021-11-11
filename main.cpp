@@ -31,24 +31,26 @@ int main() {
     // prints: 2 -10 100.4
     
     //task E 
-     double x, y, z;
-    std::cout << "Enter position: ";
-    std::cin >> x >> y >> z;
-    Coord3D *ppos = createCoord3D(x,y,z);
-    //std::cout << (*ppos).x << " " << (*ppos).y << " " << (*ppos).z << std::endl;
+    std::cout << "Running task E: " << std::endl;
+     //double x, y, z;
+
+    Coord3D ppos = {10, 20, 30};
     
-    std::cout << "Enter velocity: ";
-    std::cin >> x >> y >> z;
-    Coord3D *pvel = createCoord3D(x,y,z);
+    std::cout << "Position Coordinate: " << (ppos).x << " " << (ppos).y << " " << (ppos).z << std::endl;
+    
+  
+    Coord3D pvel = {5.5, -1.4, 7.77}; 
+      std::cout << "Velocity Coordinate: " << (pvel).x << " " << (pvel).y << " " << (pvel).z << std::endl;
+
    // std::cout << (*pvel).x << " " << (*pvel).y << " " << (*pvel).z << std::endl;
 
-    move(ppos, pvel, 10.0);
+    move(&ppos, &pvel, 10.0);
 
     std::cout << "Coordinates after 10 seconds: " 
-         << (*ppos).x << " " << (*ppos).y << " " << (*ppos).z << std::endl;
+         << (ppos).x << " " << (ppos).y << " " << (ppos).z << std::endl;
 
-    deleteCoord3D(ppos); // release memory
-    deleteCoord3D(pvel);
+    deleteCoord3D(&ppos); // release memory
+    deleteCoord3D(&pvel);
 
 
 }
